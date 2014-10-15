@@ -1,0 +1,13 @@
+**/.idea
+**/gradle/
+**/.nb*
+**/*.log
+**/build
+**/bin
+**/.classpath
+**/.settings
+**/.project
+**/.gradle
+**/.nb-gradle/private/
+**/*.iml
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+	<persistence-unit name="orm-jpa-hibernate"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>gaia.evaluate.hibernate.model.Result</class>
+		<class>gaia.evaluate.hibernate.conventer.MapToStringConveter</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<!-- hibernate properties -->
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+
+	</persistence-unit>
+</persistence> 

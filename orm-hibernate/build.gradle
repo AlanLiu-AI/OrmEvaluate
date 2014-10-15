@@ -1,0 +1,46 @@
+apply plugin:'application'
+apply plugin:'eclipse'
+apply plugin:'java'
+
+mainClassName = "gaia.evaluate.Application"
+
+sourceCompatibility = 1.7
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'ORM JPA Evaluate Hibernate', 'Implementation-Version': version
+    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
+    compile group: 'log4j', name: 'log4j', version: '1.2.16'
+    
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.2.1'
+    
+    compile group: 'org.postgresql', name: 'postgresql', version: '9.3-1101-jdbc41'
+
+    compile 'org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final'
+    compile 'org.hibernate:hibernate-core:4.3.1.Final'
+    compile 'org.hibernate:hibernate-entitymanager:4.3.1.Final'    
+    
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
