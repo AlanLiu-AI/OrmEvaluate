@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+	<persistence-unit name="orm-jpa-datanucleus">
+        <provider>org.datanucleus.api.jpa.PersistenceProviderImpl</provider>
+		<class>gaia.evaluate.datanucleus.model.Result</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+                    <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/gaiatestdb"/>
+                    <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+                    <property name="javax.persistence.jdbc.user" value="postgres"/>
+                    <property name="javax.persistence.jdbc.password" value="password"/>
+                    <property name="javax.persistence.database-major-version" value="9"/>
+                    <property name="javax.persistence.database-minor-version" value="3"/>
+                    <property name="javax.persistence.database-product-name" value="PostgreSQL"/>
+                    <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+                    <property name="javax.persistence.schema-generation.create-database-schemas" value="true"/>
+
+                    <property name="datanucleus.schema.autoCreateAll" value="true"/>
+		</properties>
+
+	</persistence-unit>
+</persistence>

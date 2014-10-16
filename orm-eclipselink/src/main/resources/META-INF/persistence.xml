@@ -16,7 +16,6 @@
 			<property name="eclipselink.cache.size.default" value="0" />
 			<property name="eclipselink.cache.type.default" value="None" />
                         
-                        <property name="eclipselink.logging.logger" value="org.eclipse.persistence.logging.CommonsLoggingSessionLog"/>
 		</properties>
 	</persistence-unit>
 </persistence> 

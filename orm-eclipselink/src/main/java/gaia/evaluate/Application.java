@@ -36,6 +36,9 @@ public class Application {
             Class<?> resultClass = gaia.evaluate.eclipselink.model.Result.class;
 
             IResult result = (IResult) resultClass.newInstance();
+            
+            result.setDescription("This is my description on eclipselink.");
+            result.setComments("This is my comments on eclipselink.");
 
             result.getMetadata()
                             .put("title",
@@ -51,9 +54,13 @@ public class Application {
             em = factory.createEntityManager();
 
             result = (IResult) em.find(resultClass, result.getId());
+            
+            logger.info("description: " + result.getDescription());
+            logger.info("comments: " + result.getComments());
+            
             Map<String, String> metadata = result.getMetadata();
             for (Entry<String, String> entry : metadata.entrySet()) {
-                    logger.info(entry.getKey() + ": " + entry.getValue());
+                    logger.info("metadata: " + entry.getKey() + ": " + entry.getValue());
             }
 
             em.close();

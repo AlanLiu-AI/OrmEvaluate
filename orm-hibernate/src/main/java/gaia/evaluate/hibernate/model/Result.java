@@ -26,6 +26,10 @@ public class Result implements Serializable, IResult {
 	@Convert(converter = gaia.evaluate.hibernate.conventer.MapToStringConveter.class)
 	private Map<String, String> metadata = new HashMap<>();
 
+        private String description;
+        
+        private String comments;
+
 	@Override
 	public Long getId() {
 		return id;
@@ -40,4 +44,24 @@ public class Result implements Serializable, IResult {
 	public void setMetadata(Map<String, String> metadata) {
 		this.metadata = metadata;
 	}
+
+        @Override
+        public String getDescription() {
+            return description;
+        }
+
+        @Override
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        @Override
+        public String getComments() {
+            return comments;
+        }
+
+        @Override
+        public void setComments(String comments) {
+            this.comments = comments;
+        }
 }

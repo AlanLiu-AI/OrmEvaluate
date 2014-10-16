@@ -3,9 +3,17 @@ package gaia.evaluate.model;
 import java.util.Map;
 
 public interface IResult {
-	public abstract Long getId();
+	Long getId();
+        
+        String getDescription();
+        
+	void setDescription(String description);
+        
+        String getComments();
+        
+	void setComments(String comments);
 
-	public abstract Map<String, String> getMetadata();
+	Map<String, String> getMetadata();
 
-	public abstract void setMetadata(Map<String, String> metadata);
+	void setMetadata(Map<String, String> metadata);
 }
