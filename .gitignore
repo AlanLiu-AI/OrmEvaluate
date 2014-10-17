@@ -10,5 +10,5 @@
 **/.gradle
 **/.nb-gradle/private/
 **/*.iml
+**/target/
 
-/orm-datanucleus-jpa/target/
