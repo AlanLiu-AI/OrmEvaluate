@@ -1,5 +1,6 @@
 package gaia.evaluate;
 
+import java.util.Map;
 import java.util.Properties;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -38,6 +39,12 @@ public class Application {
         result.setDescription("This is my description on datanucleus.");
         result.setComments("This is my comments on datanucleus.");
 
+        result.getMetadata()
+                .put("title",
+                        "'Refactoring:\\ Improving\\ the\\ Design\\ of\\ Existing\\ Code'");
+        result.getMetadata().put("creator", "Martin\\ Fowler");
+        result.getMetadata().put("comment", "This\\ is\\ a\\ comment.");
+
         em.persist(result);
         em.getTransaction().commit();
 
@@ -50,6 +57,11 @@ public class Application {
 
         logger.info("description: " + result.getDescription());
         logger.info("comments: " + result.getComments());
+
+        Map<String, String> metadata = result.getMetadata();
+        for (Map.Entry<String, String> entry : metadata.entrySet()) {
+            logger.info("metadata: " + entry.getKey() + ": " + entry.getValue());
+        }
 
         em.close();
 

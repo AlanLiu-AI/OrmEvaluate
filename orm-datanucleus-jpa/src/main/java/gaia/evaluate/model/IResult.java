@@ -1,5 +1,7 @@
 package gaia.evaluate.model;
 
+import java.util.Map;
+
 public interface IResult {
 
     Long getId();
@@ -11,4 +13,8 @@ public interface IResult {
     String getComments();
 
     void setComments(String comments);
+
+    Map<String, String> getMetadata();
+
+    void setMetadata(Map<String, String> metadata);
 }
